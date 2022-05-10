@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  height: 1800px;
+  height: 2000px;
 
   font-family: var(--mainFontFamily);
   font-weight: 400;
@@ -32,16 +32,23 @@ h6 {
   height: 100%;
 }
 .mainContent {
-  flex-grow: 2;
+  width: 67%;
   padding-top: 153px;
   padding-right: 125px;
   padding-left: 154px;
-  width: 3500px;
 }
 .sideContent {
-  flex-grow: 1;
+  width: 33%;
   background: linear-gradient(180deg, #6d5da8 0%, #43479e 100%);
+  height: 100%;
 }
+
+.title, 
+.educationListItem, 
+.experienceListItem{
+  width: 70%;
+}
+
 
 .title {
   font-family: var(--secondaryFontFamily);
@@ -50,14 +57,13 @@ h6 {
   line-height: 70px;
   letter-spacing: 0.01em;
   color: #42489e;
-
 position:relative;
 left: 100px;
 
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 20px;
+  
 }
 
 .text {
@@ -68,7 +74,7 @@ left: 100px;
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.03em;
-  max-width: 600px;
+  width: 100%;
   margin-bottom: 35px;
   color: #666666;
 } 
@@ -293,6 +299,11 @@ width: 300px;
 }
 
 /* hobby */
+.hobby{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .star {
   background-image: url(./img/star.png)
@@ -302,10 +313,7 @@ width: 300px;
   background-size: 20px 15px;
 }
 
-#forPosition{
-  position: absolute;
-  left: 256px;
-}
+
 
 
 /* aside */
@@ -319,9 +327,8 @@ width: 300px;
 .marks{
 width: auto ;
 height: 32px;
-margin-bottom: 64px;
-
-margin-top: 153px;
+margin-bottom: 17%;
+margin-top: 40%;
 align-self: flex-start;
 }
 
@@ -451,8 +458,225 @@ progress::-webkit-progress-bar {
 
 .adressContainer{
   display: flex;
-  align-items: center;
+  align-items: start;
   flex-direction: row-reverse;
   justify-content: left;
+ 
   
 }
+
+/* adaptive */
+
+ @media screen and (max-width:1024px) {
+  .mainContent{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 50px;
+  }
+  .heroSurname, .heroName{
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .heroJobTitle{
+    font-size: 14px;
+    line-height: 50px;
+  }
+
+  .herolink, .contactItem{
+    line-height: 16px ;
+    font-size:  14px;
+  }
+
+  .purpleBall{
+    width: 30px;
+    height: 30px;
+    background-size: 12px 12px;
+  }
+  .contactItem ::before {
+    
+    width: 17px;
+    height: 17px;
+  }
+  .hero {
+    
+    gap: 60px;
+  
+}
+  .hobby .star{
+    background-size: 17px 13px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 60px;
+    
+  }
+
+  .experienceListItem {
+    font-size: 15px;
+    line-height: 18px;
+    
+  }
+
+  .experienceLocation {
+    font-size: 12px;
+    line-height: 40px;
+  }
+
+  .text {
+    font-size: 10px;
+    line-height: 12px;
+    
+    margin-bottom: 20px;
+  }
+  .educationListItem {
+    font-size: 15px;
+    
+  }
+
+  .marks{
+    margin-top: 25%;
+    width: auto;
+    height: 27px;
+    }
+  .sideDescription{
+      font-size: 10px;
+      line-height: 12px;
+  
+  }
+  
+  .sideSubtitles {
+    font-size: 24px;
+    line-height: 60px;
+  }
+  .sideSubtitles {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .addressListItem{
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  .adressImage{
+width: 17px;
+height: 17px;
+  }
+  
+  .sideTitles {
+    font-size: 24px;
+    line-height: 50px;
+    margin-top: 20px;
+   
+  }
+
+  body {
+    height: 1300px;
+  }
+
+
+ }
+
+ @media screen and (max-width:768px){
+
+  #twitter{
+    visibility: hidden;
+    position: relative;
+}
+
+#twitter:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "twitter";
+
+}
+
+
+  #behance{
+    visibility: hidden;
+    position: relative;
+}
+#behance:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "behance";
+  
+}
+
+
+#figmalink{
+  visibility: hidden;
+  position: relative;
+}
+#figmalink:after {
+visibility: visible;
+position: absolute;
+top: 0;
+left: 0;
+content: "figma";
+
+}
+
+#dribble{
+  visibility: hidden;
+  position: relative;
+}
+#dribble:after {
+visibility: visible;
+position: absolute;
+top: 0;
+left: 0;
+content: "dribble";
+}
+
+.addressListItem{
+  max-width: 60px;
+}
+
+.hero{
+  flex-direction: column;
+}
+
+
+body{
+  height: 1800px;
+}
+ }
+
+@media screen and (max-width:425px){
+  .content{
+    flex-direction: column;
+  }
+
+  .mainContent{
+    width: 100%;
+  }
+.sideContent{
+  width: 100%;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 60px;
+  
+}
+}
+
+
+@media screen and (max-width:320px) {
+  .mainContent{
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-right: 10px;
+    max-width: 90%;
+  }
+}
+
+
+
